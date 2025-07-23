@@ -7,7 +7,7 @@ import BannerLayout from "../../components/details/BannerLayout";
 
 export default function Pengupedia() {
   return (
-    <BannerLayout imgSrc="/pengupedia_banner.jpg">
+    <BannerLayout imgSrc={`${import.meta.env.BASE_URL}pengupedia_banner.jpg`}>
       <Title>Happy Feet, Sharp Minds</Title>
 
       <Header
@@ -54,7 +54,7 @@ export default function Pengupedia() {
         />
 
         <Media>
-          <img src="/MainInterfaceUI.jpg" />
+          <img src={`${import.meta.env.BASE_URL}MainInterfaceUI.jpg`} />
         </Media>
 
         <Paragraph>
@@ -65,7 +65,7 @@ export default function Pengupedia() {
         </Paragraph>
 
         <Media>
-          <img src="/PauseUI.jpg" />
+          <img src={`${import.meta.env.BASE_URL}PauseUI.jpg`} />
         </Media>
       </BoundingBox>
     </BannerLayout>

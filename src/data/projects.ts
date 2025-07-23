@@ -6,7 +6,7 @@ export const projects: Project[] = [
     id: "pengupedia",
     title: "Happy Feet, Sharp Minds",
     desc: "Making educational content adorable — one penguin at a time.",
-    cover: "pengupedia_cover.png",
+    cover: "{`${import.meta.env.BASE_URL}pengupedia_cover.jpg`}",
     color1: "#e9adff",
     color2: "#9A42B9",
     DetailComponent: Pengupedia,
