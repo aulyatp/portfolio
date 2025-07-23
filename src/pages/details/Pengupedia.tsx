@@ -28,7 +28,7 @@ export default function Pengupedia() {
         <iframe
           width="100%"
           height="315"
-          src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+          src="https://www.youtube.com/embed/ZDnyhZySkjg"
           title="Pengupedia Demo"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
