@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  font-family: "Noto Sans JP";
+}
+
+.header__item {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+.header__label {
+  text-align: center;
+  color: #999;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.header__value {
+  font-weight: 500;
+  color: #222;
+}

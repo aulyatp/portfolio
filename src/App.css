@@ -1,0 +1,23 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 50px;
+  background-color: rgb(18, 18, 18);
+  font-family: "Noto Sans JP";
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.exit-button {
+  nav-right: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
