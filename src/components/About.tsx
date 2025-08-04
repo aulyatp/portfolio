@@ -5,7 +5,7 @@ export function About() {
     <div className="about-section">
       <p className="about-desc">
         Building interfaces,{" "}
-        <a href="https://a.itch.io/">
+        <a href="https://ciderbuild.itch.io/">
           <span>
             game<sup className="sup">↗</sup>
           </span>
@@ -14,7 +14,7 @@ export function About() {
       </p>
 
       <div className="about-links">
-        <a href="mailto:a@gmail.com">
+        <a href="mailto:aulyathareeq2@gmail.com">
           <span>
             Get in Touch<sup className="sup">↗</sup>
           </span>
