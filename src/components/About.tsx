@@ -6,7 +6,7 @@ export function About() {
       <p className="about-desc">Building interfaces, game systems, and ideas worth exploring.</p>
 
       <div className="about-links">
-        <a href="mailto:aulyathareeq2@gmail.com">Get in Touch ↗</a>
+        <a href="mailto:aulyathareeq2@gmail.com">Get in Touch ↗</a> || <a href="https://ciderbuild.itch.io/">Itch.io Page</a>
       </div>
     </div>
   );
