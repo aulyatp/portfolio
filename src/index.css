@@ -42,7 +42,10 @@ h1 {
 .sup {
   font-size: 0.5em;
   vertical-align: super;
+  display: inline-block;
+  text-decoration: none;
 }
+
 .sub {
   font-size: 0.5em;
   vertical-align: sub;
