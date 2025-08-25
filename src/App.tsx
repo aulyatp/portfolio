@@ -5,6 +5,7 @@ import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { About } from "./components/About";
 import "./App.css";
 import "./index.css";
+import { BookshelfScene } from "./components/BookshelfScene";
 
 function App() {
   const location = useLocation();
@@ -34,7 +35,8 @@ function App() {
               element={
                 <>
                   <About />
-                  <BookList />
+                  <BookshelfScene />
+                  {/* <BookList /> */}
                 </>
               }
             />
