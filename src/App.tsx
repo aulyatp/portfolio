@@ -1,5 +1,4 @@
 import { AnimatePresence } from "framer-motion";
-import { BookList } from "./components/BookList";
 import { ProjectDetail } from "./pages/ProjectDetail";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { About } from "./components/About";
@@ -36,7 +35,6 @@ function App() {
                 <>
                   <About />
                   <BookshelfScene />
-                  {/* <BookList /> */}
                 </>
               }
             />
