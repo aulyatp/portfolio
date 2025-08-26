@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   gap: 5rem;
   justify-content: center;
+  position: relative;
 }
 
 @media (max-width: 768px) {

@@ -3,6 +3,8 @@
   margin: 0 auto;
   text-align: center;
   font-family: "Noto Sans JP";
+  z-index: 1;
+  position: relative;
 }
 
 .about-desc {
