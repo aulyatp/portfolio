@@ -1,7 +1,7 @@
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import * as THREE from "three";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CameraZoom } from "./CameraZoom";
 import { BookList } from "./BookList";
 import "./BookshelfScene.css";
@@ -14,19 +14,6 @@ function Bookshelf() {
 export function BookshelfScene() {
   const [showBookList, setActiveBookList] = useState(false);
   const [cameraFinished, setCameraFinished] = useState(false);
-
-  // useEffect(() => {
-  //   const handleClick = (e: MouseEvent) => {
-  //     if ((e.target as HTMLElement).closest(".book-card")) return;
-  //     if ((e.target as HTMLElement).closest(".book-list")) return;
-  //     setActiveBookList(false);
-  //     setCameraFinished(false);
-  //   };
-  //   if (showBookList) {
-  //     window.addEventListener("click", handleClick);
-  //   }
-  //   return () => window.removeEventListener("click", handleClick);
-  // }, [showBookList]);
 
   return (
     <>
