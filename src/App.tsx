@@ -14,13 +14,13 @@ function App() {
     <>
       <nav className="navbar">
         <div className="navbar-left">
-          <Link to="/" className="navbar-title">
+          <Link to="//" className="navbar-title">
             Aulya
           </Link>
         </div>
         {isProjectDetail && (
           <div className="navbar-right">
-            <Link to="/" className="exit-button">
+            <Link to="//" className="exit-button">
               ⛌
             </Link>
           </div>
