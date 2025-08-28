@@ -8,7 +8,7 @@ import "./BookshelfScene.css";
 
 function Bookshelf() {
   const { scene } = useGLTF(`${import.meta.env.BASE_URL}models/bookshelf.glb`);
-  return <primitive object={scene} position={[0, -1, 0]} scale={[0.42, 0.42, 0.42]} />;
+  return <primitive object={scene} position={[0, -1, 0]} scale={[0.453, 0.453, 0.453]} />;
 }
 
 export function BookshelfScene() {
@@ -27,7 +27,7 @@ export function BookshelfScene() {
             <Bookshelf />
           </mesh>
 
-          <OrbitControls enabled={!showBookList} minDistance={2.69} maxDistance={3.69} minPolarAngle={0.42} maxPolarAngle={1.83} />
+          <OrbitControls enabled={!showBookList} minDistance={2.69} maxDistance={3.69} minPolarAngle={0.42} maxPolarAngle={1.83} enablePan={false} />
           <CameraZoom target={new THREE.Vector3(2, 2, 2)} active={showBookList} onArrive={() => setCameraFinished(true)} />
         </Canvas>
       </div>
