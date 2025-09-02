@@ -7,7 +7,7 @@ import { BookList } from "./BookList";
 import "./BookshelfScene.css";
 
 function Bookshelf() {
-  const { scene } = useGLTF(`${import.meta.env.BASE_URL}models/bookshelf.glb`);
+  const { scene } = useGLTF(`${import.meta.env.BASE_URL}models/bookshelf2.glb`);
   return <primitive object={scene} position={[0, -1, 0]} scale={[0.453, 0.453, 0.453]} />;
 }
 
@@ -19,9 +19,9 @@ export function BookshelfScene() {
     <>
       <div className="center_3d_wrapper">
         <Canvas camera={{ position: [2.69, 2.69, 4.2] }}>
-          <directionalLight position={[5, 10, 5]} intensity={2} />
-          <ambientLight intensity={2.69} />
-          <hemisphereLight intensity={1.4} />
+          <directionalLight position={[5, 10, 5]} intensity={0.69} />
+          <ambientLight intensity={1.4} />
+          <hemisphereLight intensity={0.69} />
 
           <mesh onClick={() => setActiveBookList(true)}>
             <Bookshelf />
