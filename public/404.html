@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; URL='/portfolio/'" />
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+      // Preserve the original path when redirecting
+      const segment = "/portfolio";
+      const path = window.location.pathname;
+      // Only redirect if the path starts with /portfolio
+      if (path.startsWith(segment)) {
+        const newUrl = segment + "/#" + path.slice(segment.length);
+        window.location.replace(newUrl);
+      } else {
+        // Fallback (unlikely): go to root
+        window.location.replace(segment + "/");
+      }
+    </script>
   </head>
   <body></body>
 </html>
