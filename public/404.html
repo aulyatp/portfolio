@@ -8,7 +8,7 @@
       const path = window.location.pathname;
       // Only redirect if the path starts with /portfolio
       if (path.startsWith(segment)) {
-        const newUrl = segment + "/#" + path.slice(segment.length);
+        const newUrl = segment + path.slice(segment.length);
         window.location.replace(newUrl);
       } else {
         // Fallback (unlikely): go to root
