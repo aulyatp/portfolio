@@ -22,9 +22,9 @@ function App() {
         </div>
         {!isProjectDetail && (
           <div className="navbar-right">
-            <div className="exit-button" onClick={() => setActiveBookList(true)}>
+            <Link to="/" className="exit-button" onClick={() => setActiveBookList(true)}>
               Projects
-            </div>
+            </Link>
           </div>
         )}
         {isProjectDetail && (
