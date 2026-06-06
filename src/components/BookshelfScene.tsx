@@ -11,14 +11,18 @@ function Bookshelf() {
   return <primitive object={scene} position={[0, -1, 0]} scale={[0.453, 0.453, 0.453]} />;
 }
 
-export function BookshelfScene() {
-  const [showBookList, setActiveBookList] = useState(false);
+interface BookshelfSceneProps {
+  showBookList: boolean;
+  setActiveBookList: (value: boolean) => void;
+}
+
+export function BookshelfScene({ showBookList, setActiveBookList }: BookshelfSceneProps) {
   const [cameraFinished, setCameraFinished] = useState(false);
 
   return (
     <>
       <div className="center_3d_wrapper">
-        <Canvas camera={{ position: [2.69, 2.69, 4.2] }}>
+        <Canvas camera={{ position: [2.69, 2.69, 4.2] }} onClick={() => setActiveBookList(false)}>
           <directionalLight position={[5, 10, 5]} intensity={0.69} />
           <ambientLight intensity={1.4} />
           <hemisphereLight intensity={0.69} />

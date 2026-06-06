@@ -2,6 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import { ProjectDetail } from "./pages/ProjectDetail";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { About } from "./components/About";
+import { useState } from "react";
 import "./App.css";
 import "./index.css";
 import { BookshelfScene } from "./components/BookshelfScene";
@@ -9,18 +10,26 @@ import { BookshelfScene } from "./components/BookshelfScene";
 function App() {
   const location = useLocation();
   const isProjectDetail = location.pathname.startsWith("/project/");
+  const [showBookList, setActiveBookList] = useState(false);
 
   return (
     <>
       <nav className="navbar">
         <div className="navbar-left">
-          <Link to="//" className="navbar-title">
+          <Link to="/" className="navbar-title" onClick={() => setActiveBookList(false)}>
             Aulya
           </Link>
         </div>
+        {!isProjectDetail && (
+          <div className="navbar-right">
+            <div className="exit-button" onClick={() => setActiveBookList(true)}>
+              Projects
+            </div>
+          </div>
+        )}
         {isProjectDetail && (
           <div className="navbar-right">
-            <Link to="//" className="exit-button">
+            <Link to="/" className="exit-button">
               ⛌
             </Link>
           </div>
@@ -34,7 +43,7 @@ function App() {
               element={
                 <>
                   <About />
-                  <BookshelfScene />
+                  <BookshelfScene showBookList={showBookList} setActiveBookList={setActiveBookList} />
                 </>
               }
             />
