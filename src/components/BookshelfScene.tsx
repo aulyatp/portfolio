@@ -6,9 +6,10 @@ import { CameraZoom } from "./CameraZoom";
 import { BookList } from "./BookList";
 import "./BookshelfScene.css";
 
-function Bookshelf() {
+function Bookshelf({ onClick }: { onClick: (e: any) => void }) {
   const { scene } = useGLTF(`${import.meta.env.BASE_URL}models/bookshelf2.glb`);
-  return <primitive object={scene} position={[0, -1, 0]} scale={[0.453, 0.453, 0.453]} />;
+
+  return <primitive object={scene} position={[0, -1, 0]} scale={[0.453, 0.453, 0.453]} onClick={onClick} />;
 }
 
 interface BookshelfSceneProps {
@@ -21,14 +22,24 @@ export function BookshelfScene({ showBookList, setActiveBookList }: BookshelfSce
 
   return (
     <>
-      <div className="center_3d_wrapper">
-        <Canvas camera={{ position: [2.69, 2.69, 4.2] }} onClick={() => setActiveBookList(false)}>
+      <div className="center-3d-wrapper">
+        <Canvas
+          camera={{ position: [2.69, 2.69, 4.2] }}
+          onPointerMissed={() => {
+            setActiveBookList(false);
+          }}
+        >
           <directionalLight position={[5, 10, 5]} intensity={0.69} />
           <ambientLight intensity={1.4} />
           <hemisphereLight intensity={0.69} />
 
-          <mesh onClick={() => setActiveBookList(true)}>
-            <Bookshelf />
+          <mesh>
+            <Bookshelf
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveBookList(true);
+              }}
+            />
           </mesh>
 
           <OrbitControls enabled={!showBookList} minDistance={2.69} maxDistance={3.69} minPolarAngle={0.42} maxPolarAngle={1.83} enablePan={false} />

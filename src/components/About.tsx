@@ -5,11 +5,11 @@ export function About() {
     <div className="about-section">
       <h1 className="about-headline">Building delightful interfaces and interactive experiences.</h1>
 
-      <p className="about-desc">
+      {/* <p className="about-desc">
         Frontend | Game | Design
         <br />
-        {/* Currently learning shader programming and exploring technical art. */}
-      </p>
+        Currently learning shader programming and exploring technical art.
+      </p> */}
 
       <div className="about-cta">
         <a href="https://github.com/aulyatp" className="cta-link">

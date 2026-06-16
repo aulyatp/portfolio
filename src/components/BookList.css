@@ -3,7 +3,7 @@
   margin-bottom: 5rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 5rem;
+  gap: 4rem;
   justify-content: center;
   position: relative;
   z-index: 1;
@@ -13,5 +13,7 @@
   .book-list {
     flex-direction: column;
     align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
   }
 }
