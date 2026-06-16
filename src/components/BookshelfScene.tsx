@@ -46,7 +46,7 @@ export function BookshelfScene({ showBookList, setActiveBookList }: BookshelfSce
           <CameraZoom target={new THREE.Vector3(2, 2, 2)} active={showBookList} onArrive={() => setCameraFinished(true)} />
         </Canvas>
       </div>
-      <div className="book-list">{showBookList && cameraFinished && <BookList />}</div>
+      {showBookList && cameraFinished && <BookList />}
     </>
   );
 }
