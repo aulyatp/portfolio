@@ -1,23 +1,18 @@
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-
-import Pengupedia from "./details/Pengupedia";
-import type { JSX } from "react";
+import { projects } from "../data/projects";
 
 export function ProjectDetail() {
   const { id } = useParams();
+  const project = projects.find((p) => p.id === id);
 
-  const projectMap: Record<string, JSX.Element> = {
-    pengupedia: <Pengupedia />,
-  };
+  if (!project?.DetailComponent) return <div>Project not found.</div>;
 
-  const DetailComponent = projectMap[id ?? ""];
-
-  if (!DetailComponent) return <div>Project not found.</div>;
+  const Detail = project?.DetailComponent;
 
   return (
     <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 50 }} transition={{ duration: 0.6, ease: "easeInOut" }}>
-      {DetailComponent}
+      <Detail />
     </motion.div>
   );
 }
