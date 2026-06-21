@@ -1,140 +1,83 @@
 import BoundingBox from "../../components/details/BoundingBox";
 import Header from "../../components/details/Header";
-import Media from "../../components/details/Media";
 import Paragraph from "../../components/details/Paragraph";
 import Title from "../../components/details/Title";
 import BannerLayout from "../../components/details/BannerLayout";
 import PlanActualChart from "../../components/erp-chart/PlanActualChart";
+import SpiCpiChart from "../../components/erp-chart/SpiCpiChart";
+import DonutChart from "../../components/erp-chart/DonutChart";
+import VerticalBarChart from "../../components/erp-chart/VerticalBarChart";
+import GanttChart from "../../components/erp-chart/GanttChart";
 
 export default function ErpChart() {
   return (
-    <BannerLayout imgSrc={`${import.meta.env.BASE_URL}pengupedia_banner.jpg`}>
-      <Title>Visualize Your Facts</Title>
+    <BannerLayout imgSrc={`${import.meta.env.BASE_URL}wcp_erp_cover.png`}>
+      <Title>Engineering Intelligence, Unified</Title>
 
       <Header
         items={[
-          {
-            label: "Role",
-            value: <>Full Stack Developer</>,
-          },
-          { label: "Tools", value: "Laravel, Bootstrap 5, Vue.js, ApexCharts" },
+          { label: "Role", value: <>Frontend Developer</> },
+          { label: "Tools", value: "Laravel Blade, Bootstrap 5, Vue.js, ApexCharts" },
         ]}
       />
 
       <Paragraph>
         <div style={{ textAlign: "center" }}>
-          <br />
-          Pengupedia is an educational game focused on penguins, where players explore, interact, and learn.
+          Multi-domain ERP dashboard for PT. Wira Cipta Perkasa — SPI, CPI, HSE, procurement, and finance unified in
+          one glass-morphism interface on a deep-navy gradient.
         </div>
       </Paragraph>
 
-      <PlanActualChart />
-
+      {/* Chart 1 — Progress Kemajuan */}
       <BoundingBox>
-        <Header
-          items={[
-            {
-              label: "01. OVERVIEW",
-              value: (
-                <Paragraph>
-                  <div style={{ textAlign: "center" }}>Balancing visual aesthetics with information clarity for the game.</div>
-                </Paragraph>
-              ),
-            },
-          ]}
-        />
-
+        <Header items={[{ label: "01. PROGRESS KEMAJUAN", value: "Planned vs Actual (horizontal bar)" }]} />
         <Paragraph>
-          In game design, creating a good user interface (UI) and user experience (UX) requires balancing visual aesthetics with informational clarity. Proper implementation of interfaces element that support learning condition positively
-          contributes to a better user experience. The challenge lies in designing an interface that combines visually pleasing aesthetics with intuitive usability, enabling users to quickly understand the content. An interface that is both
-          visually engaging and functional has positive impacts on user experience. Furthermore, intuitive design ensures that information can be accessed quickly without confusing the user. Studies also reveal that elements such as color
-          contrast and visual aesthetics greatly influence how users focus on objects displayed on the screen.
+          Each project row shows planned and actual completion side-by-side. Drag the sliders to see how deviation
+          changes in real time — green when ahead, red when behind schedule.
         </Paragraph>
-
-        <Media>
-          <div className="media-image-wrapper">
-            <img src={`${import.meta.env.BASE_URL}MainInterfaceUI.jpg`} className="media-element" />
-          </div>
-          <div className="media-image-wrapper">
-            <img src={`${import.meta.env.BASE_URL}PauseUI.jpg`} className="media-element" />
-          </div>
-          <div className="media-image-wrapper">
-            <img src={`${import.meta.env.BASE_URL}PediaUI.jpg`} className="media-element" />
-          </div>
-          <div className="media-image-wrapper">
-            <img src={`${import.meta.env.BASE_URL}PlayUI.jpg`} className="media-element" />
-          </div>
-        </Media>
+        <PlanActualChart />
       </BoundingBox>
 
+      {/* Chart 2 — SPI / CPI */}
       <BoundingBox>
         <Header
-          items={[
-            {
-              label: "02. PROCESS",
-              value: (
-                <Paragraph>
-                  <div style={{ textAlign: "center" }}>Emphatize, Define, Ideate, Prototype, and Test.</div>
-                </Paragraph>
-              ),
-            },
-          ]}
+          items={[{ label: "02. SPI / CPI LINE CHART", value: "Schedule & Cost Performance Index by quarter" }]}
         />
-
         <Paragraph>
-          The empathize stage is the initial step in Design Thinking, aimed at understanding user needs and challenges. This process was conducted through two methods: respondent interviews and competitive analysis. contrast and visual
-          aesthetics greatly influence how users focus on objects displayed on the screen. Insights from the empathize stage were analyzed to identify pain points, refined through the "How Might We" (HMW) approach to develop actionable
-          solutions for effective UI/UX design.
+          Switch quarters with the tab buttons. Adjust each month's ratio with the sliders below — the polyline and
+          colour update instantly. Values above 1.0 (the dashed baseline) are on track.
         </Paragraph>
-
-        <Paragraph>
-          How Might We is an approach to obtain potential solutions to the identified pain points. Potential solutions include creating a game that incorporates factual educational content; designing a user-friendly and intuitive UI;
-          creating 3D penguin models for each species, complete with animations, sounds, and detailed information; developing a visually appealing interface with harmonious colors and patterns; and adding diverse minigames.
-        </Paragraph>
-
-        <Header
-          items={[
-            {
-              label: "Prototypes",
-              value: "",
-            },
-          ]}
-        />
-
-        <Media>
-          <div className="media-image-wrapper">
-            <img src={`${import.meta.env.BASE_URL}settingsW.jpg`} className="media-element" />
-          </div>
-          <div className="media-image-wrapper">
-            <img src={`${import.meta.env.BASE_URL}playW.jpg`} className="media-element" />
-          </div>
-          <div className="media-image-wrapper">
-            <img src={`${import.meta.env.BASE_URL}pediaW.jpg`} className="media-element" />
-          </div>
-          <div className="media-image-wrapper">
-            <img src={`${import.meta.env.BASE_URL}3dProgress.jpg`} className="media-element" />
-          </div>
-        </Media>
+        <SpiCpiChart />
       </BoundingBox>
 
+      {/* Chart 3 — Project Status Donut */}
       <BoundingBox>
-        <Header
-          items={[
-            {
-              label: "03. RESULTS",
-              value: (
-                <Paragraph>
-                  <div style={{ textAlign: "center" }}>Modified GUESS Testing.</div>
-                </Paragraph>
-              ),
-            },
-          ]}
-        />
-
+        <Header items={[{ label: "03. PROJECT STATUS", value: "Donut chart — On Track / At Risk / Delayed" }]} />
         <Paragraph>
-          Positive reception from playtesting: 28 out of 30 users enjoyed the game. The normalized GUESS score for Ekspedisi Pengupedia is 76.48, indicating a Grade B category of "Good." This shows that the game is well-executed but has
-          certain areas that require improvement. The specific areas for enhancement can be identified by analyzing the normalized scores for each subscale.
+          Edit the count next to each legend item and watch the donut redraw instantly. All segments recalculate
+          together because every arc length depends on the running total.
         </Paragraph>
+        <DonutChart />
+      </BoundingBox>
+
+      {/* Chart 4 — Project Type Vertical Bar */}
+      <BoundingBox>
+        <Header items={[{ label: "04. PROJECT MIX", value: "Vertical bar chart — project count by type" }]} />
+        <Paragraph>
+          Click any bar to open an inline number input. Press Enter or click away to confirm — bar heights animate
+          as the max recalculates across all bars.
+        </Paragraph>
+        <VerticalBarChart />
+      </BoundingBox>
+
+      {/* Chart 5 — Gantt */}
+      <BoundingBox>
+        <Header items={[{ label: "05. PROJECT TIMELINE", value: "Gantt chart with drag-to-resize bars" }]} />
+        <Paragraph>
+          Filter by project type, move the "Today" marker with the date picker, hover bars for details, and drag the
+          darker handles at each bar edge to shift start or end dates — all without a chart library.
+        </Paragraph>
+        <GanttChart />
       </BoundingBox>
     </BannerLayout>
   );
