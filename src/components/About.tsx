@@ -1,4 +1,5 @@
 import "./About.css";
+import pokeball from "../assets/pokeball.svg";
 
 export function About() {
   return (
@@ -20,6 +21,9 @@ export function About() {
         </a>
         <a href="https://www.linkedin.com/in/aulya-thareeq-pravantawidya-538928123/" className="cta-link">
           <i className="fa-brands fa-square-linkedin"></i>
+        </a>
+        <a href="https://www.figma.com/design/23kOB7DHA1Pb8S9bI6Jtd8/Pok%C3%A9mon-App-UI-Design" className="cta-link">
+          <img src={pokeball} className="pokeball-icon" alt="pokeball" />
         </a>
       </div>
 

@@ -76,4 +76,22 @@
 
 .cta-link {
   font-size: clamp(1.5rem, 3vw, 2rem);
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.cta-link:hover {
+  color: #facc15;
+}
+
+.pokeball-icon {
+  height: 1em;
+  width: 1em;
+  filter: brightness(0) invert(1);
+  transition: filter 0.2s ease;
+}
+
+.cta-link:hover .pokeball-icon {
+  filter: brightness(0) saturate(100%) invert(87%) sepia(100%) saturate(800%) hue-rotate(1deg) brightness(110%);
 }
